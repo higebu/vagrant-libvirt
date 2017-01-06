@@ -64,6 +64,7 @@ module VagrantPlugins
           @video_vram = config.video_vram
           @keymap = config.keymap
           @kvm_hidden = config.kvm_hidden
+          @qemu_commandline = config.qemu_commandline
 
           @tpm_model = config.tpm_model
           @tpm_type = config.tpm_type
@@ -179,6 +180,9 @@ module VagrantPlugins
           env[:ui].info(" -- Image:             #{@domain_volume_path} (#{env[:box_virtual_size]}G)")
           env[:ui].info(" -- Volume Cache:      #{@domain_volume_cache}")
           env[:ui].info(" -- Kernel:            #{@kernel}")
+          @qemu_commandline.each do |c|
+            env[:ui].info(" -- QEMU Commandline:  #{c}")
+          end
           env[:ui].info(" -- Initrd:            #{@initrd}")
           env[:ui].info(" -- Graphics Type:     #{@graphics_type}")
           env[:ui].info(" -- Graphics Port:     #{@graphics_port}")

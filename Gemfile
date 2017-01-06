@@ -15,13 +15,9 @@ group :development do
   end
 
   gem 'vagrant-spec', :github => 'mitchellh/vagrant-spec',
-    tag: ENV['VAGRANT_SPEC_VERSION'] || "9bba7e1228379c0a249a06ce76ba8ea7d276afbe"
+    tag: ENV['VAGRANT_SPEC_VERSION'] || "24b7e3c07f3b89dec6c501a6c41c6ae971d593ca"
 
   gem 'pry'
-end
-
-group :plugins do
-  gem 'vagrant-libvirt', :path => '.'
 end
 
 gem 'coveralls', require: false
